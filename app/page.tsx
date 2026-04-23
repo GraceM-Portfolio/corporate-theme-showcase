@@ -85,7 +85,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-primary/20 shadow-lg mb-6">
               <Sparkles className="h-4 w-4 text-primary" />
               <span className="text-sm font-medium bg-gradient-to-r from-primary to-amber-500 bg-clip-text text-transparent">
-                 Analytics Suite
+                AI-Powered Analytics Suite
               </span>
               <Badge variant="outline" className="ml-2 border-primary/30 bg-primary/5 text-primary text-xs">
                 New
@@ -229,8 +229,12 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {pricingTiers.map((tier, index) => (
-              <Card key={index} className={`relative border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 ${tier.popular ? 'border-primary border-2 shadow-primary/20' : ''}`}>
-                {tier.popular && <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-primary/80 text-white shadow-md">Most Popular</Badge>}
+              <Card key={index} className={`relative border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 overflow-visible ${tier.popular ? 'border-primary border-2 shadow-primary/20' : ''}`}>
+                {tier.popular && (
+                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-primary/80 text-white shadow-md z-10 whitespace-nowrap">
+                    Most Popular
+                  </Badge>
+                )}
                 <CardHeader>
                   <CardTitle>{tier.name}</CardTitle>
                   <CardDescription>{tier.description}</CardDescription>
